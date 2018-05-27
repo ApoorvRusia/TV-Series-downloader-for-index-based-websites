@@ -41,7 +41,7 @@ links = [link.get('href') for link in links]
 links.remove(links[0])
 print(links)
 urllist = []
-season = 0
+season = 1
 def videodownloader(urllist, seasn):
     print('HERE YOU GO:')
     episode = 1
