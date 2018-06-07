@@ -1,11 +1,3 @@
-
-# coding: utf-8
-
-# Importing the neccessary packages for web scraping the videos
-
-# In[1]:
-
-
 #importing the packages we need for scraping
 import requests
 from bs4 import BeautifulSoup
@@ -16,27 +8,15 @@ from contextlib import closing
 
 
 # Using input box to enter the url of the website
-
-# In[ ]:
-
-
 #adding the url name
 url = input('Enter the url: ')
 #url = 'http://fromv.ir/vip/Up/Animation%20Series/Ultimate%20Spiderman/'
 
 
 # Using input box to ask the user what name has to be used for the videos for saving the file
-
-# In[40]:
-
-
 #asking for series name for giving the name to the file
 seriesName = input('Enter the series name: ')
 print(seriesName)
-
-
-# In[42]:
-
 
 def simple_get(url):
     """
@@ -95,17 +75,11 @@ soup = BeautifulSoup(page, 'html.parser')
 
 # Justifying the html to easily navigate through it
 
-# In[45]:
-
-
 #we can use prettify to print the html page as it is in justified form
 print(soup.prettify())
 
 
 # Function to download the video with properly naming the series
-
-# In[47]:
-
 
 #finding all the links to download the episodes in different seasons
 links = soup.find_all('a')
@@ -130,9 +104,6 @@ def videodownloader(urllist, seasn, episode = 1):
     season = seasn + 1
 
 
-# In[51]:
-
-
 season = input('Enter the season number from where you want to download: ')
 episodenumber = input('Enter the episode number to start the download: ')
 if season.strip() == '':
@@ -146,10 +117,6 @@ else:
 
 
 # Looping thorugh different seasons of the tv series and calling videodownloader function
-
-# In[52]:
-
-
 # foor loop to call the video downloader function in loop to download all the video files.
 for link in links:
     #merging url to extend it
